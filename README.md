@@ -74,3 +74,29 @@ POST /url: Generates a new short URL. Accepts a JSON payload with the url and no
 GET /url/analytics/:shortId: Retrieves analytics for a specific shortened URL based on its shortId.
 
 GET /url/search: Searches for shortened URLs based on different criteria. Accepts query parameters keyword and option.
+
+
+## Key Learnings
+
+Creating RESTful APIs with Express and handling different HTTP methods.
+
+Connecting to MongoDB database using Mongoose.
+
+Performing CRUD operations (Create, Read, Update, Delete) on MongoDB collections.
+
+Implementing URL shortening functionality and generating unique short IDs using the shortid library.
+
+Retrieving and displaying analytics for shortened URLs, including total clicks and last clicked timestamp.
+
+Implementing search functionality to filter and display URLs based on different criteria.
+React components: The application is built using React.js, which provides a component-based architecture for building reusable UI elements.
+
+State management with React Hooks: The useState hook is used to manage the state within functional components. It allows for storing and updating the state values.
+
+Making HTTP requests with Axios: Axios is a popular library used for making HTTP requests. It is used in this application to send requests to the server to shorten URLs and search for URLs based on different criteria.
+
+Sending data to the server: The application sends data to the server using HTTP POST requests to shorten the URL. The axios.post method is used to send the request along with the URL and optional note.
+
+Retrieving data from the server: The application retrieves data from the server using HTTP GET requests to search for previously shortened URLs. The axios.get method is used to send the request with the search keyword and search option.
+
+Displaying search results: The search results are displayed dynamically based on the search criteria. The retrieved data from the server is formatted and displayed using React components.
