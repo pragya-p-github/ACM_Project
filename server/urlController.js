@@ -84,6 +84,7 @@ const searchURLs = async(req, res) => {
           shortId: 1,
           redirectURL: 1,
           note: 1,
+          totalClicks: { $size: "$visitHistory" },
           lastClicked: {
             $cond: [
               { $isArray: "$visitHistory" },
