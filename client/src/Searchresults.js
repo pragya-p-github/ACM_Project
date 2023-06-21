@@ -16,7 +16,7 @@ const SearchResults = () => {
       const { data } = response;
 
       const formattedResults = data.results.map((result) => {
-        const { shortId, redirectURL, note, lastClicked } = result;
+        const { shortId, redirectURL, note, totalclicks, lastClicked } = result;
 
         return {
           shortId,
@@ -72,6 +72,9 @@ const SearchResults = () => {
                 >
                   {result.redirectURL}
                 </a>
+                <ul>
+                  Total Clicks : {result.totalclicks}
+                </ul>
                 <ul>
                   Last Clicked at :{" "}
                   {result.latestClickTimestamp
