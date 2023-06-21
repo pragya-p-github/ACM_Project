@@ -11,7 +11,7 @@ Node.js and Express.js are used to create the server and handle the requests.
 
 Axios is used to make the requests to the server.
 
-Most importantly shortid is used for generating short ids.
+Most importantly shortid library is used for generating short and unique IDs for the shortened URLs.
 
 CORS is used for establishing a middleware for all routes in the application, allowing requests from any domain.
 
@@ -100,3 +100,20 @@ Sending data to the server: The application sends data to the server using HTTP 
 Retrieving data from the server: The application retrieves data from the server using HTTP GET requests to search for previously shortened URLs. The axios.get method is used to send the request with the search keyword and search option.
 
 Displaying search results: The search results are displayed dynamically based on the search criteria. The retrieved data from the server is formatted and displayed using React components.
+
+
+
+## Resourses
+
+For Express.js and Node.js 
+https://youtu.be/H9M02of22z4
+
+For MongDB 
+https://youtu.be/oSIv-E60NiU
+
+For Mongoose
+https://youtu.be/DZBGEVgL2eE
+
+For MERN Stack 
+https://youtu.be/7CqJlxBYj-M
+
