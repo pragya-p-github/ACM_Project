@@ -60,18 +60,17 @@ const getAnalytics = async(req, res) => {
   }
 }
 
-const searchURLs = async(req, res) => {
+const searchURLs = async (req, res) => {
   const keyword = req.query.keyword;
-  const option = req.query.option; // Change variable name to 'option'
+  const option = req.query.option;
 
   let matchQuery = {};
-  let projectFields = {};
 
-  if (option === "shortUrl") { // Update variable name here as well
+  if (option === "shortUrl") {
     matchQuery = { shortId: keyword };
-  } else if (option === "originalUrl") { // Update variable name here as well
+  } else if (option === "originalUrl") {
     matchQuery = { redirectURL: { $regex: keyword, $options: "i" } };
-  } else if (option === "notes") { // Update variable name here as well
+  } else if (option === "notes") {
     matchQuery = { note: { $regex: keyword, $options: "i" } };
   }
 
@@ -84,7 +83,7 @@ const searchURLs = async(req, res) => {
           shortId: 1,
           redirectURL: 1,
           note: 1,
-          totalClicks: { $size: "$visitHistory" },
+          totalClicks: { $size: "$visitHistory" }, // Calculate the totalClicks using $size
           lastClicked: {
             $cond: [
               { $isArray: "$visitHistory" },
@@ -102,9 +101,7 @@ const searchURLs = async(req, res) => {
     console.error(error);
     return res.status(500).json({ error: "Server error" });
   }
-}
-
-// ...
+};
 
 
 module.exports = {
