@@ -57,7 +57,7 @@ Upon submitting the form, it sends a POST request to the backend API to shorten 
 
 ## Searchresults
 
-The system includes a functionality that enables users to search for previously shortened URLs based on different criteria. For URL searches, a dropdown menu is available with three options: short URL, original URL, and note. Users can select one of these options and input a keyword to perform the search. The keywords can be any word present in the URL or related notes. Upon initiating a search, a GET request is sent to the backend API, containing the chosen search criteria and keyword. /// The resulting search outcomes are displayed, featuring the shortened URL, the timestamp of the last click (if available), and a clickable link to visit the shortened URL.///
+The system includes a functionality that enables users to search for previously shortened URLs based on different criteria. For URL searches, a dropdown menu is available with three options: short URL, original URL, and note. Users can select one of these options and input a keyword to perform the search. The keywords can be any word present in the URL or related notes. Upon initiating a search, a GET request is sent to the backend API, containing the chosen search criteria and keyword. The resulting search outcomes are displayed, featuring the shortened URL, the timestamp of the last click (if available), and a clickable link to visit the shortened URL.
 
 ## API REQUESTS
 
