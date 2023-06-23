@@ -87,7 +87,7 @@ const SearchResults = () => {
                     {result.shortId}
                   </a>
                 </ul>
-                <ul>Total Clicks: {result.totalClicks}</ul>
+                <ul>Total Clicks: {result.totalClicks -1 }</ul>
                 <ul>
                   Last Clicked at:{" "}
                   {result.latestClickTimestamp
