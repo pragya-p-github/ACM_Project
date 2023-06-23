@@ -27,22 +27,28 @@ Change to the server directory using :
 
 cd server 
 
+
 Install the dependencies for the server using:
 
 npm install
+
 
 Start the server and establish the database connection using:
 
 npm start
 
+
 Open a new terminal or command prompt (while keeping the server running) and change to the client directory:
 
 cd client
 
+
 Install the dependencies for the client using:
 
 npm install
+
 npm axios (In case axios is not already downloaded)
+
 
 Start the client application and run it on localhost using:
 
