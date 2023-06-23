@@ -16,13 +16,16 @@ const SearchResults = () => {
       const { data } = response;
 
       const formattedResults = data.results.map((result) => {
-        const { shortId, redirectURL, note, totalclicks, lastClicked } = result;
+        const { shortId, redirectURL, note, totalClicks, lastClicked } = result;
 
         return {
           shortId,
           redirectURL,
           note,
-          latestClickTimestamp: lastClicked ? new Date(lastClicked).toLocaleString() : "N/A",
+          totalClicks,
+          latestClickTimestamp: lastClicked
+            ? new Date(lastClicked).toLocaleString()
+            : "N/A",
         };
       });
 
@@ -36,35 +39,37 @@ const SearchResults = () => {
     <div className="search-results">
       <h2>Search URL</h2>
       <ul className="list">
-        <label htmlFor="searchOption">Search by:     </label>
-      <select
-        value={searchOption}
-        onChange={(e) => setSearchOption(e.target.value)}
-        className="dropdown"
-        placeholder="Select search option"
-      >
-        <option value="shortUrl">Short URL</option>
-        <option value="originalUrl">Original URL</option>
-        <option value="notes">Notes</option>
-      </select>
+        <label htmlFor="searchOption">Search by:</label>
+        <select
+          value={searchOption}
+          onChange={(e) => setSearchOption(e.target.value)}
+          className="dropdown"
+          placeholder="Select search option"
+        >
+          <option value="shortUrl">Short URL</option>
+          <option value="originalUrl">Original URL</option>
+          <option value="notes">Notes</option>
+        </select>
       </ul>
       <ul>
-      <input
-        type="text"
-        value={searchKeyword}
-        onChange={(e) => setSearchKeyword(e.target.value)}
-        placeholder="Enter search keyword"
-        className="input"
-      />
+        <input
+          type="text"
+          value={searchKeyword}
+          onChange={(e) => setSearchKeyword(e.target.value)}
+          placeholder="Enter search keyword"
+          className="input"
+        />
       </ul>
-      <button onClick={handleSearch} className="button">Search</button>
+      <button onClick={handleSearch} className="button">
+        Search
+      </button>
 
       {searchResults.length > 0 && (
         <div>
           <h1>Search Results:</h1>
           <ul>
             {searchResults.map((result) => (
-              <ul key={result.shortId} className="searchs">
+              <li key={result.shortId} className="searchs">
                 <a
                   href={`http://localhost:8000/${result.redirectURL}`}
                   target="_blank"
@@ -73,15 +78,23 @@ const SearchResults = () => {
                   {result.redirectURL}
                 </a>
                 <ul>
-                  Total Clicks : {result.totalclicks}
+                  Short URL:{" "}
+                  <a
+                    href={`http://localhost:8000/${result.shortId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {result.shortId}
+                  </a>
                 </ul>
+                <ul>Total Clicks: {result.totalClicks}</ul>
                 <ul>
-                  Last Clicked at :{" "}
+                  Last Clicked at:{" "}
                   {result.latestClickTimestamp
-                    ? new Date(result.latestClickTimestamp).toLocaleString()
+                    ? result.latestClickTimestamp
                     : "N/A"}
                 </ul>
-              </ul>
+              </li>
             ))}
           </ul>
         </div>
