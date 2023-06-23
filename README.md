@@ -42,20 +42,22 @@ cd client
 Install the dependencies for the client using:
 
 npm install
+npm axios (In case axios is not already downloaded)
 
 Start the client application and run it on localhost using:
 
 npm start
 
 
-## Shorternurl
 
-A form component that allows users to enter a long URL and an optional note. Upon submitting the form, it sends a POST request to the backend API to shorten the URL. The shortened URL is displayed once it is generated.
+
+## Shorternurl
+On the homepage, users are presented with form component that allows them to enter a URL along with a related note. The inclusion of a note ensures that each entry retains its uniqueness, enabling easier searching for specific URLs. 
+Upon submitting the form, it sends a POST request to the backend API to shorten the URL. The shortened URL is displayed once it is generated.
 
 ## Searchresults
 
-A component that enables users to search for previously shortened URLs based on different criteria. It includes a search option dropdown, a keyword input field, and a search button. When the user performs a search, it sends a GET request to the backend API with the selected search criteria and keyword. The search results are displayed, including the shortened URL, the last clicked timestamp (if available), and a link to visit the shortened URL.
-
+The system includes a functionality that enables users to search for previously shortened URLs based on different criteria. For URL searches, a dropdown menu is available with three options: short URL, original URL, and note. Users can select one of these options and input a keyword to perform the search. The keywords can be any word present in the URL or related notes. Upon initiating a search, a GET request is sent to the backend API, containing the chosen search criteria and keyword. /// The resulting search outcomes are displayed, featuring the shortened URL, the timestamp of the last click (if available), and a clickable link to visit the shortened URL.///
 
 ## API REQUESTS
 
